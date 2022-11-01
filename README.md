@@ -11,7 +11,7 @@
     <li><a href="" target="_blank">curso de Python</a></li>
 </ul>
 <h2>💡 Tips:</h2>
-<h2>-> Regex *️</h2>
+<h2>-> Regex ⚙️</h2>
 <ul>
     <li>
         Básico
@@ -30,12 +30,12 @@
         </ul>
     </li>
 </ul>
-<h2>-> Python</h2>
+<h2>-> Python 🐍</h2>
 <ul>
     <li>API com python
         <ul>
             <li>
-                <a href="" target="_blank">Como consumir uma API</a></li>
+                <a href="https://github.com/StartFuture/contents-and-tips/blob/main/Tips/Python/%231_como_consumir_api.py" target="_blank">Como consumir uma API</a></li>
         </ul>
     </li>
     <li>Automação
@@ -45,11 +45,11 @@
     </li>
 </ul>
 
-<h2>-> Java</h2>
+<h2>-> Java ☕</h2>
 <ul>
     <li>Maven
         <ul>
-            <li><a href="" target="_blank">Entendendo O Maven</a></li>
+            <li><a href="https://github.com/StartFuture/contents-and-tips/blob/main/Tips/Java/%237_entendendo_o_maven.java" target="_blank">Entendendo O Maven</a></li>
         </ul>
     </li>
     <li>Micro serviços com Java
@@ -59,12 +59,12 @@
     </li>
 </ul>
 
-<h2>-> Cloud computing</h2>
+<h2>-> Cloud computing ☁️</h2>
 <ul>
     <li>
         S3
         <ul>
-            <li><a href="" target="_blank">Como ler arquivos direto do S3</a></li>
+            <li><a href="https://github.com/StartFuture/contents-and-tips/blob/main/Tips/Cloud/%234_como_ler_arquivos_direto_s3.py" target="_blank">Como ler arquivos direto do S3</a></li>
         </ul>
     </li>
     <li>EC2
@@ -73,7 +73,7 @@
         </ul>
     </li>
 </ul>
-<h2>-> Other Tips</h2>
+<h2>-> Other Tips 🖥️</h2>
 <ul>
-    <li><a href="" target="_blank">Métodos Http</a></li>
+    <li><a href="https://github.com/StartFuture/contents-and-tips/blob/main/Tips/%233_protocolos_http.md" target="_blank">Métodos Http</a></li>
 </ul>
