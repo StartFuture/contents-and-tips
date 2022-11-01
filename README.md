@@ -2,16 +2,16 @@
 <h2>Contents-and-Tips</h2>
 <p> Our DEV content repository</p>
 
-<h2>Link Tree</h2>
+<h2>🔗 Link Tree</h2>
 
-<h2>Courses:</h2>
+<h2>📚 Courses:</h2>
 <ul>
     <li><a href="" target="_blank">Curso Html e css</a></li>
     <li><a href="" target="_blank">Curso de AWS</a></li>
     <li><a href="" target="_blank">curso de Python</a></li>
 </ul>
-<h2>Tips:</h2>
-<h2>-> Regex</h2>
+<h2>💡 Tips:</h2>
+<h2>-> Regex *️</h2>
 <ul>
     <li>
         Básico
