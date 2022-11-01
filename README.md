@@ -6,9 +6,9 @@
 
 <h2>📚 Courses:</h2>
 <ul>
-    <li><a href="" target="_blank">Curso Html e css</a></li>
-    <li><a href="" target="_blank">Curso de AWS</a></li>
-    <li><a href="" target="_blank">curso de Python</a></li>
+    <li><a href="https://github.com/StartFuture/contents-and-tips/tree/main/courses/html%2Bcss" target="_blank">Curso Html e css</a></li>
+    <li><a href="https://github.com/StartFuture/contents-and-tips/tree/main/courses/aws" target="_blank">Curso de AWS</a></li>
+    <li><a href="https://github.com/StartFuture/contents-and-tips/tree/main/courses/python" target="_blank">curso de Python</a></li>
 </ul>
 <h2>💡 Tips:</h2>
 <h2>-> Regex ⚙️</h2>
@@ -16,7 +16,7 @@
     <li>
         Básico
         <ul>
-            <li><a href="" target="_blank">inicioando no REGEX</a></li>
+            <li><a href="" target="_blank">iniciando no REGEX</a></li>
         </ul>
     </li>
     <li>REGEX no Python
@@ -40,7 +40,7 @@
     </li>
     <li>Automação
         <ul>
-            <li><a href="" target="_blank">Selenium</a></li>
+            <li><a href="https://github.com/StartFuture/contents-and-tips/blob/main/Tips/Python/%2310_selenium.py" target="_blank">Selenium</a></li>
         </ul>
     </li>
 </ul>
