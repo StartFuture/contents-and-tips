@@ -1,0 +1,129 @@
+# Criação de ambiente cloud/back-end
+
+### Introdução
+
+Olá, aluno(a) do Start Future! Tudo certo? Hoje iremos realizar o processo de instalação e configuração dos principais recursos, ferramentas e do sistema operacional que mais usaremos nas aulas relacionadas a back-end e cloud computing!
+
+A lista completa é a seguinte:
+
+- Python 3
+- Visual Studio Code
+- Extensões do VSCode
+- WSL2
+- Docker
+- AWS CLI
+
+### **1. Python 3**
+
+Primeiro, você precisa baixar o instalador do Python 3 no site oficial da linguagem. Escolha a versão mais recente e compatível com o seu sistema operacional (Windows, macOS ou Linux).
+
+Em seguida, execute o arquivo de instalação e siga as instruções na tela. Se você não estiver familiarizado com as configurações de instalação, deixe as opções padrão selecionadas.
+
+Depois de instalado, abra o seu terminal e digite **`python3`** para verificar se a instalação foi concluída com sucesso. Se tudo estiver funcionando corretamente, você deve ver uma mensagem de boas-vindas do Python.
+
+## Linux:
+
+```bash
+sudo apt install python3
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3 get-pip.py
+rm get-pip.py
+python3 -m pip install pip
+python3 -m pip install virtualenv
+
+```
+
+### **2. Visual Studio Code**
+
+Agora vamos instalar o Visual Studio Code, um editor de código leve e poderoso que suporta várias linguagens de programação. Para isso, baixe o instalador do VS Code no site oficial e execute-o.
+
+Assim como no caso do Python, as opções padrão geralmente são suficientes para a instalação. Quando a instalação estiver concluída, abra o VS Code e aproveite!
+
+### **3. Extensões do VSCode**
+
+Para tornar o VS Code ainda mais poderoso, você pode instalar extensões. Existem centenas de extensões disponíveis no VS Code Marketplace, então você pode escolher aquelas que melhor atendem às suas necessidades.
+
+Para instalar uma extensão, basta abrir o VS Code e clicar no ícone de extensões no canto esquerdo da barra lateral. Em seguida, pesquise pela extensão que deseja e clique no botão "Instalar". Depois que a extensão for instalada, você pode ativá-la clicando no botão "Ativar".
+
+![Untitled](Criac%CC%A7a%CC%83o%20de%20ambiente%20cloud%20back-end%20935986db75d44d57a47e46d074c7c523/Untitled.png)
+
+Extensões recomendadas:
+
+- Pylance (ms-python.vscode-pylance)
+- Docker (ms-azuretools.vscode-docker)
+- Python (ms-python.python)
+- AutoDocString (njpwerner.autodocstring)
+
+### **4. WSL2**
+
+Agora vamos instalar o WSL2, uma ferramenta que permite executar o Linux em um ambiente virtual dentro do Windows. Isso é especialmente útil se você estiver desenvolvendo aplicativos que serão executados em servidores Linux.
+
+Primeiro, verifique se o seu Windows 10 tem a atualização mais recente instalada. Em seguida, abra o "Painel de Controle", vá para "Programas" e clique em "Ativar ou desativar recursos do Windows".
+
+Procure por "Subsistema do Windows para Linux" e marque a caixa de seleção. Depois de selecionar a opção, clique em "OK" e aguarde a instalação.
+
+### **5. Docker**
+
+O Docker é uma plataforma de contêineres que permite criar, implantar e executar aplicativos em ambientes isolados. Isso ajuda a garantir que o seu aplicativo funcione de maneira consistente em diferentes ambientes.
+
+Para instalar o Docker, vá ao site oficial e baixe o instalador para o seu sistema operacional. Siga as instruções na tela para concluir a instalação.
+
+```bash
+## Configuração Docker nativo
+
+## Instalando Pre-requitos
+
+sudo apt update && sudo apt upgrade -y
+sudo apt remove docker docker-engine docker.io containerd runc -y
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release -y
+
+## Adicione o repositório do Docker na lista de sources do Ubuntu:
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo \
+  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+## Instalando docker engine
+
+sudo apt update && sudo apt upgrade -y
+sudo apt-get install docker-ce docker-ce-cli containerd.io -y
+
+## Dê permissão para rodar o Docker com seu usuário corrente:
+
+sudo usermod -aG docker $USER
+
+## Instale o Docker Compose:
+
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod a+x /usr/local/bin/docker-compose
+
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+```
+
+### **6. AWS CLI**
+
+Finalmente, vamos instalar a AWS CLI, uma ferramenta de linha de comando que permite gerenciar os serviços da Amazon Web Services. Isso é especialmente útil se você estiver trabalhando com infraestrutura na nuvem.
+
+Para instalar a AWS CLI, abra o seu terminal e digite o seguinte comando:
+
+```yaml
+pip3 install awscli --upgrade --user
+```
+
+Isso instalará o AWS CLI usando o gerenciador de pacotes Python, o **`pip3`**. Se tudo ocorrer bem, a instalação será concluída em alguns minutos.
+
+Depois que a AWS CLI estiver instalada, você precisará configurá-la com suas credenciais da AWS. Para fazer isso, execute o seguinte comando no terminal:
+
+```yaml
+aws configure
+```
+
+Em seguida, siga as instruções na tela para fornecer suas credenciais da AWS (ID de acesso e chave de acesso) e definir a região padrão. Quando terminar, a AWS CLI estará pronta para uso.
+
+E pronto! Agora você tem todas as ferramentas necessárias para começar a programar em Python e trabalhar com desenvolvimento de aplicativos na nuvem com a AWS CLI.
