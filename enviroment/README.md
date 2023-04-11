@@ -45,7 +45,7 @@ Para tornar o VS Code ainda mais poderoso, você pode instalar extensões. Exist
 
 Para instalar uma extensão, basta abrir o VS Code e clicar no ícone de extensões no canto esquerdo da barra lateral. Em seguida, pesquise pela extensão que deseja e clique no botão "Instalar". Depois que a extensão for instalada, você pode ativá-la clicando no botão "Ativar".
 
-![Untitled](Criac%CC%A7a%CC%83o%20de%20ambiente%20cloud%20back-end%20935986db75d44d57a47e46d074c7c523/Untitled.png)
+![addon_python](./addon_python.png)
 
 Extensões recomendadas:
 
