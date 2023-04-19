@@ -11,6 +11,9 @@ A lista completa é a seguinte:
 - Extensões do VSCode
 - WSL2
 - Docker
+  - Instalando o Docker no Windows & Linux
+  - Instalando o Mysql dentro do Docker
+- Testando o banco
 - AWS CLI
 
 ### **1. Python 3**
@@ -30,7 +33,6 @@ python3 get-pip.py
 rm get-pip.py
 python3 -m pip install pip
 python3 -m pip install virtualenv
-
 ```
 
 ### **2. Visual Studio Code**
@@ -68,45 +70,124 @@ O Docker é uma plataforma de contêineres que permite criar, implantar e execut
 
 Para instalar o Docker, vá ao site oficial e baixe o instalador para o seu sistema operacional. Siga as instruções na tela para concluir a instalação.
 
+#### Nativamente no linux
+
+##### Configurando
+
 ```bash
-## Configuração Docker nativo
-
-## Instalando Pre-requitos
 
 sudo apt update && sudo apt upgrade -y
-sudo apt remove docker docker-engine docker.io containerd runc -y
-sudo apt-get install \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    gnupg \
-    lsb-release -y
 
-## Adicione o repositório do Docker na lista de sources do Ubuntu:
+sudo apt --fix-broken install -y
 
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-echo \
-  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt install docker.io -y
 
-## Instalando docker engine
+curl -fsSL https://get.docker.com/ | sh
 
-sudo apt update && sudo apt upgrade -y
-sudo apt-get install docker-ce docker-ce-cli containerd.io -y
+sudo usermod -a -G docker $USER
 
-## Dê permissão para rodar o Docker com seu usuário corrente:
-
-sudo usermod -aG docker $USER
-
-## Instale o Docker Compose:
-
-sudo curl -L "https://github.com/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod a+x /usr/local/bin/docker-compose
-
-sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 ```
 
-### **6. AWS CLI**
+##### Executando
+
+```bash
+
+sudo docker ps
+
+```
+
+#### Docker dentro do wsl2
+
+##### Configurando
+
+  ```bash
+  ## Configuração Docker nativo
+
+  ## Instalando Pre-requitos
+
+  sudo apt update && sudo apt upgrade -y
+  sudo apt remove docker docker-engine docker.io containerd runc -y
+  sudo apt-get install \
+      apt-transport-https \
+      ca-certificates \
+      curl \
+      gnupg \
+      lsb-release -y
+
+  ## Adicione o repositório do Docker na lista de sources do Ubuntu:
+
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+  echo \
+    "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+    $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+  ## Instalando docker engine
+
+  sudo apt update && sudo apt upgrade -y
+  sudo apt-get install docker-ce docker-ce-cli containerd.io -y
+
+  ## Dê permissão para rodar o Docker com seu usuário corrente:
+
+  sudo usermod -aG docker $USER
+
+  ## Instale o Docker Compose:
+
+  sudo curl -L "https://github.com/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  sudo chmod a+x /usr/local/bin/docker-compose
+
+  sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+  ```
+
+##### Executando
+
+```bash
+sudo dockerd > /dev/null 2>&1 &
+```
+
+#### **Mysql**
+
+##### Criando o Container do Mysql
+
+```bash
+docker run --name=mysql_boot -p3306:3306 -v mysql-volume:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=admin -d mysql/mysql-server:latest
+```
+
+> Caso a configuração do mysql no docker seja feita dentro do wsl2 o proximo passo precisa ser realizado
+
+```bash
+docker exec -it mysql_boot bash # se de certo voce entrara dentro do container
+mysql -u root -p # se der certo voce entrara dentro do mysql
+update mysql.user set host = '%' where user='root'; # habilite conexões de outros locais
+FLUSH PRIVILEGES; # atualize os privilegios
+```
+
+### **6. Testando banco de dados**
+
+#### DBeaver
+
+##### Configurando DBeaver
+
+1. Baixe e instale o [DBeaver](https://dbeaver.io/)
+
+2. Clique na opção para criar conexão:
+
+  ![create_connection](./Create-new-connection-button.png)
+
+3. Selecione a opção "Mysql"
+
+  ![create_connection](./Simple-mode-connection-view.png)
+
+4. Preencha as informações de usuário e senha 
+
+  ![create_connection](./Wizard-MySQL-settings.png)
+
+5. Clique em "Driver properties" e depois coloque a opção "allowPublicKeyRetrieval" para "true"
+
+  ![create_connection](./allow_public_key_retrieval.png)
+
+6. Clique em test connection e pronto ;)
+
+### **7. AWS CLI**
 
 Finalmente, vamos instalar a AWS CLI, uma ferramenta de linha de comando que permite gerenciar os serviços da Amazon Web Services. Isso é especialmente útil se você estiver trabalhando com infraestrutura na nuvem.
 
