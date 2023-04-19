@@ -1,6 +1,6 @@
 # Criação de ambiente cloud/back-end
 
-### Introdução
+## Introdução
 
 Olá, aluno(a) do Start Future! Tudo certo? Hoje iremos realizar o processo de instalação e configuração dos principais recursos, ferramentas e do sistema operacional que mais usaremos nas aulas relacionadas a back-end e cloud computing!
 
@@ -16,7 +16,7 @@ A lista completa é a seguinte:
 - Testando o banco
 - AWS CLI
 
-### **1. Python 3**
+## **1. Python 3**
 
 Primeiro, você precisa baixar o instalador do Python 3 no site oficial da linguagem. Escolha a versão mais recente e compatível com o seu sistema operacional (Windows, macOS ou Linux).
 
@@ -24,7 +24,7 @@ Em seguida, execute o arquivo de instalação e siga as instruções na tela. Se
 
 Depois de instalado, abra o seu terminal e digite **`python3`** para verificar se a instalação foi concluída com sucesso. Se tudo estiver funcionando corretamente, você deve ver uma mensagem de boas-vindas do Python.
 
-## Linux:
+## Linux
 
 ```bash
 sudo apt install python3
@@ -35,13 +35,13 @@ python3 -m pip install pip
 python3 -m pip install virtualenv
 ```
 
-### **2. Visual Studio Code**
+## **2. Visual Studio Code**
 
 Agora vamos instalar o Visual Studio Code, um editor de código leve e poderoso que suporta várias linguagens de programação. Para isso, baixe o instalador do VS Code no site oficial e execute-o.
 
 Assim como no caso do Python, as opções padrão geralmente são suficientes para a instalação. Quando a instalação estiver concluída, abra o VS Code e aproveite!
 
-### **3. Extensões do VSCode**
+## **3. Extensões do VSCode**
 
 Para tornar o VS Code ainda mais poderoso, você pode instalar extensões. Existem centenas de extensões disponíveis no VS Code Marketplace, então você pode escolher aquelas que melhor atendem às suas necessidades.
 
@@ -56,7 +56,7 @@ Extensões recomendadas:
 - Python (ms-python.python)
 - AutoDocString (njpwerner.autodocstring)
 
-### **4. WSL2**
+## **4. WSL2**
 
 Agora vamos instalar o WSL2, uma ferramenta que permite executar o Linux em um ambiente virtual dentro do Windows. Isso é especialmente útil se você estiver desenvolvendo aplicativos que serão executados em servidores Linux.
 
@@ -64,15 +64,15 @@ Primeiro, verifique se o seu Windows 10 tem a atualização mais recente instala
 
 Procure por "Subsistema do Windows para Linux" e marque a caixa de seleção. Depois de selecionar a opção, clique em "OK" e aguarde a instalação.
 
-### **5. Docker**
+## **5. Docker**
 
 O Docker é uma plataforma de contêineres que permite criar, implantar e executar aplicativos em ambientes isolados. Isso ajuda a garantir que o seu aplicativo funcione de maneira consistente em diferentes ambientes.
 
 Para instalar o Docker, vá ao site oficial e baixe o instalador para o seu sistema operacional. Siga as instruções na tela para concluir a instalação.
 
-#### Nativamente no linux
+### Nativamente no linux
 
-##### Configurando
+#### Configurando
 
 ```bash
 
@@ -88,7 +88,7 @@ sudo usermod -a -G docker $USER
 
 ```
 
-##### Executando
+#### Executando
 
 ```bash
 
@@ -96,9 +96,9 @@ sudo docker ps
 
 ```
 
-#### Docker dentro do wsl2
+### Docker dentro do wsl2
 
-##### Configurando
+#### Configurando wsl2
 
   ```bash
   ## Configuração Docker nativo
@@ -138,15 +138,15 @@ sudo docker ps
   sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
   ```
 
-##### Executando
+#### Executando wsl2
 
 ```bash
 sudo dockerd > /dev/null 2>&1 &
 ```
 
-#### **Mysql**
+### **Mysql**
 
-##### Criando o Container do Mysql
+#### Criando o Container do Mysql
 
 ```bash
 docker run --name=mysql_boot -p3306:3306 -v mysql-volume:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=admin -d mysql/mysql-server:latest
@@ -161,11 +161,11 @@ update mysql.user set host = '%' where user='root'; # habilite conexões de outr
 FLUSH PRIVILEGES; # atualize os privilegios
 ```
 
-### **6. Testando banco de dados**
+## **6. Testando banco de dados**
 
-#### DBeaver
+### DBeaver
 
-##### Configurando DBeaver
+#### Configurando DBeaver
 
 1. Baixe e instale o [DBeaver](https://dbeaver.io/)
 
@@ -187,7 +187,7 @@ FLUSH PRIVILEGES; # atualize os privilegios
 
 6. Clique em test connection e pronto ;)
 
-### **7. AWS CLI**
+## **7. AWS CLI**
 
 Finalmente, vamos instalar a AWS CLI, uma ferramenta de linha de comando que permite gerenciar os serviços da Amazon Web Services. Isso é especialmente útil se você estiver trabalhando com infraestrutura na nuvem.
 
