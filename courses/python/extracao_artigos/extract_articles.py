@@ -1,3 +1,7 @@
+# instalando bibliotecas
+
+# pip install newspaper3k
+
 # Importando bibliotecas
 from newspaper import Article
 
