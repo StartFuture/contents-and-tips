@@ -17,7 +17,7 @@ def timer(func):
 
 @timer # Decorator
 # Definindo a função que será decorada
-# nesse caso, criei um exemplo de uma
+# nesse caso, criei uma de exemplo
 def wait_5_seconds():
     # Aqui você escreve o código para pegar o tempo de execução
     from time import sleep
