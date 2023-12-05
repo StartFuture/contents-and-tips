@@ -18,3 +18,5 @@ servidor_smpt_google = smtplib.SMTP('smtp.gmail.com: 587') # Instanciando Objeto
 servidor_smpt_google.starttls() # Iniciando conexão
 servidor_smpt_google.login(msg['From'], pin_gmail) # Realizando login
 servidor_smpt_google.sendmail(msg['From'], [msg['To']], msg.as_string().encode('utf-8')) # Enviando e-mail
+
+servidor_smpt_google.close() # Fechando conexão
