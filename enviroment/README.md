@@ -149,7 +149,7 @@ sudo dockerd > /dev/null 2>&1 &
 #### Criando o Container do Mysql
 
 ```bash
-docker run --name=mysql_boot -p3306:3306 -v mysql-volume:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=admin -d mysql/mysql/mysql-server:5.7
+docker run --name=mysql_boot -p3306:3306 -v mysql-volume:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=admin -d mysql/mysql-server:5.7
 ```
 
 > Caso a configuração do mysql no docker seja feita dentro do wsl2 o proximo passo precisa ser realizado
